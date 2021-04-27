@@ -17,20 +17,38 @@ knowledge that i've learned in chapter 30 of threading.
 
 ### Design
 
-How did you approach your program design? Did you use multiple classes to define various objects?
+I used different a few classes and one method for this program, I used classes to define and initialize the threads 
+and I used the method in order to display the flag that moves across the interface screen.
 
 ```
-Give examples
+ public Flag() {
+  FlagPanel flagPanel = new FlagPanel();
+  add(flagPanel);
+  Thread thread = new Thread(flagPanel);       // Create Thread
+  thread.start();
+ }
+ 
+ class FlagPanel extends JPanel implements Runnable {
+  private int currentFlag = 0;
+  private ImageIcon imageIcon;
+  private int x;
+  private int y;
+  private static final long serialVersionUID = 1L;
+  private boolean newFlag = true;
+  private Image image;
 ```
 
 ### Testing
 
-A step by step series of examples that you developed to properly test the program. 
 
-Say what the step will be
+Step 1: Create Thread
 
 ```
-Give the example
+ FlagPanel flagPanel = new FlagPanel();
+  add(flagPanel);
+  Thread thread = new Thread(flagPanel);       // Create Thread
+  thread.start();
+ }
 ```
 
 And repeat
@@ -39,7 +57,8 @@ And repeat
 until finished
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+You can use the data to compare with 15.13 which the assignment states that you should. And from what i've seen
+threading seems to look smoother but it moved at about the same speed from what I saw.
 
 ## Notes
 

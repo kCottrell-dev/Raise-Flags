@@ -1,17 +1,19 @@
-# Project Title
+# Raise Flags
 
-One Paragraph of project description goes here
+Rewrite Listing 15.13 using a thread to animate a flag being raised. Basically just rewriting the code 
+of 15.13 to fit with a threading design.
 
 ## Example Output
-
-This image will display as your example output. Name the image README.jpg in your project folder.
 
 ![Sample Output](README.jpg)
 
 ## Analysis Steps
 
-This section should restate the assignment and explain how you analyzed the requirements in order 
-to develop a solution.
+Well, I figured out the requirements of this program, by simply looking in the book or what I had to do which was
+ look inside the pearson in the supplemental material section to find the 30.3 assignment
+then reading the text that says I need to go back and rewrite an old set of code that i've previously seen
+in chapter 15 in 15.13 Animate flag. Now it says I have basically rewrite the code in 15.13 using the new 
+knowledge that i've learned in chapter 30 of threading.
 
 ### Design
 
@@ -41,7 +43,9 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Notes
 
-Explain any issues or testing instructions.
+You can test the 15.13 and thew new rewritten code by setting the delay timer to 10 seconds
+and compare.
+
 
 ## Do not change content below this line
 ## Adapted from a README Built With

@@ -59,7 +59,7 @@ public static void main(String[] args) {       // Set Screen
   frame.add(new Flag());
   frame.setTitle("U.S Flag");                     
   frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-  frame.setSize(500, 500);
+  frame.setSize(850, 850);
   frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
   frame.setLocationRelativeTo(null);
   frame.setVisible(true);

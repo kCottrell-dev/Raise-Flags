@@ -51,10 +51,69 @@ Step 1: Create Thread
  }
 ```
 
-And repeat
+Step 2: Set Screen
 
 ```
-until finished
+public static void main(String[] args) {       // Set Screen
+  JFrame frame = new JFrame();               
+  frame.add(new Flag());
+  frame.setTitle("U.S Flag");                     
+  frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+  frame.setSize(500, 500);
+  frame.setMinimumSize(new Dimension(frame.getWidth(), frame.getHeight()));
+  frame.setLocationRelativeTo(null);
+  frame.setVisible(true);
+ }
+```
+Step 3: Task Class
+```
+class FlagPanel extends JPanel implements Runnable {          //Task Class
+  private int currentFlag = 0;
+  private ImageIcon imageIcon;
+  private int x;
+  private int y;
+  private static final long serialVersionUID = 1L;
+  private boolean newFlag = true;
+  private Image image;
+```
+Step 4: Implement Image Method to display flag
+
+```
+@Override
+  protected void paintComponent(Graphics g) {          //Implement Image
+   super.paintComponent(g);
+   if (newFlag) {
+    y = getHeight();
+    newFlag = false;
+     imageIcon = new ImageIcon(this.getClass().getResource("flag" + ".gif"));
+    image = imageIcon.getImage();
+   }
+   x = (getWidth() - imageIcon.getIconWidth()) / 2;
+   g.drawImage(image, x,  y, imageIcon.getIconWidth(), imageIcon.getIconHeight(), this);
+   if (y + imageIcon.getIconHeight() <= 0) {
+    newFlag = true;
+    currentFlag++;
+    if (currentFlag > 6) {
+     currentFlag = 0;
+    }    
+   }
+  }
+```
+Step 5: Run the thread
+```
+public void run() {         //Run
+   try {
+    while (true) {
+     Thread.sleep(10);
+     y--;          
+     repaint();
+    }
+   } catch (InterruptedException e) {
+    e.printStackTrace();
+   }
+  }
+ }
+}
 ```
 
 You can use the data to compare with 15.13 which the assignment states that you should. And from what i've seen
